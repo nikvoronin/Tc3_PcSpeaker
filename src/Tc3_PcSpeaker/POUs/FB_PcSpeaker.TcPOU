@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <POU Name="FB_PcSpeaker" Id="{bb367f20-ce66-4b73-935b-99667ad48b00}" SpecialFunc="None">
+    <Declaration><![CDATA[// PC Speaker TwinCAT 3 Library for x86 based PLCs. 
+// Project based on Beckhoff's IOPortWrite Example
+// https://infosys.beckhoff.com/content/1033/tcplclibsystem/html/tcplclibsys_f_ioportwrite.htm
+// and "PC INTERN 2.0" book by Data Becker, ISBN 3-89011-331-1.
+//
+FUNCTION_BLOCK FB_PcSpeaker
+VAR_INPUT
+	Freq	: DWORD	:= 10000;	// Frequency [Hz]
+	Length	: TIME	:= T#500MS;	// Tone duration
+	Delay	: TIME	:= T#0MS;	// Delay after the tone
+	Execute	: BOOL;				// Rising edge starts function block execution
+END_VAR
+VAR_OUTPUT
+	Busy	: BOOL;
+	Error	: BOOL;
+	ErrorId	: UDINT;
+END_VAR
+{library private}
+VAR
+	state		: UINT;
+	sts61H		: DWORD;
+	cnt42H		: DWORD;
+	cntLo		: DWORD;
+	cntHi		: DWORD;
+	Timer		: TON;
+	Execute_I	: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE state OF
+0:
+	IF Execute AND NOT Execute_I THEN
+		Execute_I := Execute;
+		Busy := TRUE;
+		Error := FALSE;
+		ErrorId := 0;
+		Timer( IN := FALSE );
+	
+		IF Freq = 0 THEN
+			state := 65500;
+		ELSE
+			IF F_IOPortWrite( 16#43, NoOfByte_Byte, 182 ) THEN
+				cnt42H := 1193180 / Freq;
+				cntLo := cnt42H AND 16#FF;
+				cntHi := SHR( cnt42H, 8 ) AND 16#FF;
+		
+				F_IOPortWrite( 16#42, NoOfByte_Byte, cntLo );
+				F_IOPortWrite( 16#42, NoOfByte_Byte, cntHi );
+		
+				Timer( IN := TRUE, PT := Length );
+	
+				SwitchOn();	
+		
+				state := 100;
+			ELSE
+				state := 65500;
+			END_IF
+		END_IF
+	END_IF
+
+100: // Beep
+	Timer();
+	IF Timer.Q THEN
+		Timer(IN := FALSE);
+		SwitchOff();
+
+		IF Delay < T#1MS THEN
+			Busy := FALSE;
+			state := 0;
+		ELSE
+			Timer(IN := TRUE, PT := Delay);
+			state := 200;
+		END_IF
+	END_IF
+
+200: // Delay
+	Timer();
+	IF Timer.Q THEN
+		Busy := FALSE;
+		state := 0;
+	END_IF	
+
+65500:
+	SwitchOff();
+	Busy := FALSE;
+	Error := TRUE;
+	ErrorId := 16#8000;
+	state := 0;
+END_CASE
+
+Execute_I := Execute_I AND Execute;]]></ST>
+    </Implementation>
+    <Action Name="SwitchOff" Id="{a48e107e-b19d-4ab5-a1ad-b25d15021777}">
+      <Implementation>
+        <ST><![CDATA[sts61H := F_IOPortRead( 16#61, NoOfByte_Byte );
+sts61H := sts61H AND 2#11111100;
+F_IOPortWrite( 16#61, NoOfByte_Byte, sts61H ); (* speaker off *)
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="SwitchOn" Id="{4e31efca-e7f2-41f3-9877-d6c3b9f24ed4}">
+      <Implementation>
+        <ST><![CDATA[sts61H := F_IOPortRead( 16#61, NoOfByte_Byte );
+sts61H := sts61H OR 2#11;
+F_IOPortWrite( 16#61, NoOfByte_Byte, sts61H ); (* speaker ON *)
+]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>

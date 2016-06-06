@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/Tc3_PcSpeaker/_*
+/src/PcSpeaker_Player/_*
+*.tmc
+*.tpy
+.vs
+*.~u

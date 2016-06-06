@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>-->
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15443d8d-dd80-4d5d-bd73-876d4f2e9838}</ProjectGuid>
+    <SubObjectsSortedByName>True</SubObjectsSortedByName>
+    <Name>Nw3_PcSpeaker</Name>
+    <ProgramVersion>3.1.4020.1</ProgramVersion>
+    <Application>{5927d717-a7b1-459e-9958-edb7f8c227e9}</Application>
+    <TypeSystem>{345b06fd-4989-4446-a945-44d0c37a5afb}</TypeSystem>
+    <Implicit_Task_Info>{e509e36a-8ecd-4e08-ab55-7ea045e21fd0}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{ddf2410f-d085-445a-aab0-892e126e68e6}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{79c306d7-eeb4-4bf1-beb7-8254c58abd8e}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{90f6046a-122f-4320-b5dd-bbadca97b01b}</LibraryReferences>
+    <Released>true</Released>
+    <Title>Tc3_PcSpeaker</Title>
+    <Placeholder>Tc3_PcSpeaker</Placeholder>
+    <Author>Nikolai Voronin</Author>
+    <LibraryCategories>
+      <LibraryCategory>
+        <Id>{74d110c6-7213-4765-be2b-3ff0f1e344fb}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>BuildingAutomation</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{f85b699a-03a4-49e3-9943-d193548feecb}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>Communication</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{348d807f-e1d6-47d4-ad2a-dc8d5fd59f05}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{f85b699a-03a4-49e3-9943-d193548feecb}</Id>
+        </ParentCategory>
+        <DefaultName>IEC60870</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{ae647248-ff09-4c38-932e-10ab7e9eb9ea}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{f85b699a-03a4-49e3-9943-d193548feecb}</Id>
+        </ParentCategory>
+        <DefaultName>IEC61850</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{54e90195-1c5a-4ae5-80f5-579d92dd9aa8}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{f85b699a-03a4-49e3-9943-d193548feecb}</Id>
+        </ParentCategory>
+        <DefaultName>Serial</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{23b71de8-3c4d-47a7-8969-e84f015c9e5d}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{f85b699a-03a4-49e3-9943-d193548feecb}</Id>
+        </ParentCategory>
+        <DefaultName>TcpIp</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{e800ea8a-cc01-4f20-bd63-4e34f39b75da}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{f85b699a-03a4-49e3-9943-d193548feecb}</Id>
+        </ParentCategory>
+        <DefaultName>Modbus</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{fafce590-c801-4d05-974c-d391e08bd390}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>Controller</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{313ea83d-0856-4423-8239-36856a823d0a}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>DataAccess</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{0c2d2cc2-1178-495d-a2c5-dd48e484d8c0}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>IO</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{425113a0-360b-49bc-b3be-a0c2f5666343}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{0c2d2cc2-1178-495d-a2c5-dd48e484d8c0}</Id>
+        </ParentCategory>
+        <DefaultName>Drive</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{fbd49470-7a3e-4d8c-bec7-8a262b18d231}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>Math</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>Motion</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{ed65ed00-ff03-42ce-9a93-7e375f85ad34}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>PTP</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{e51270e5-11f0-4f5a-961b-9a4c48fe1dc0}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>Camming</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{592129c5-c82e-42b0-b712-006f68958ecb}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>FlyingSaw</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{2a41f279-94f2-4e37-a241-97286347c638}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>Drive</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{186d654a-b252-4ca2-9854-7e23939f7967}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>NCI</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{a1b11c77-e75e-471f-9e45-11fc4eef760b}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>CNC</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{35857722-d45d-45b1-a229-0a409661ea78}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>Hydraulics</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{dc2f4ff8-2ce2-4f1f-bce2-d5b9c174a46a}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>Packaging</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{42e61ec8-3941-4853-92b4-9d204cebc40e}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{90603686-1a10-42a3-90e5-27c0c69154f7}</Id>
+        </ParentCategory>
+        <DefaultName>XFC</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{d77c10e0-9dc6-46ed-bea1-c259418a1863}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>System</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{ba75baba-ddc3-4479-b5b3-3c8059bcba99}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{d77c10e0-9dc6-46ed-bea1-c259418a1863}</Id>
+        </ParentCategory>
+        <DefaultName>CX-Series</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{7c091802-871e-4487-8dcb-28c32dcb0a30}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{d77c10e0-9dc6-46ed-bea1-c259418a1863}</Id>
+        </ParentCategory>
+        <DefaultName>IPC-Series</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{cb610b82-b544-44a3-8551-c878e5389b18}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{d77c10e0-9dc6-46ed-bea1-c259418a1863}</Id>
+        </ParentCategory>
+        <DefaultName>Visu</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{22803ce1-8755-4889-b7b0-5920397c55f8}</Id>
+        <Version>1.0.0.0</Version>
+        <ParentCategory>
+          <Id>{d77c10e0-9dc6-46ed-bea1-c259418a1863}</Id>
+        </ParentCategory>
+        <DefaultName>Obsolete</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory>
+        <Id>{196fe72f-48df-4527-8662-d9036e12ac55}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>TwinSAFE</DefaultName>
+      </LibraryCategory>
+    </LibraryCategories>
+    <SelectedLibraryCategories>
+      <Id>{d77c10e0-9dc6-46ed-bea1-c259418a1863}</Id>
+    </SelectedLibraryCategories>
+    <Company>Nikolai Voronin</Company>
+    <ProjectVersion>1.0.0.0</ProjectVersion>
+    <!--    <OutputType>Exe</OutputType>
+    <RootNamespace>MyApplication</RootNamespace>
+    <AssemblyName>MyApplication</AssemblyName>-->
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="POUs" />
+    <Folder Include="Version" />
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="POUs\FB_PcSpeaker.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Version\Global_Version.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tc3_PcSpeaker.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <PlcProjectOptions>
+      <XmlArchive>
+  <Data>
+    <o xml:space="preserve" t="OptionKey">
+      <v n="Name">"&lt;ProjectRoot&gt;"</v>
+      <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+        <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
+        <o>
+          <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
+        <o>
+          <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>GlobalVisuImageFilePath</v>
+            <v>%APPLICATIONPATH%</v>
+          </d>
+        </o>
+        <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
+        <o>
+          <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>ActiveVisuProfile</v>
+            <v>IR0whWr8bwe6BwAAhwvSTgAAAABQAgAAfv8FQwAAAAABAAAAAAAAAAEaUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwACTHsAZgA5ADUAYgBiADQAMgA2AC0ANQA1ADIANAAtADQAYgA0ADUALQA5ADQAMAAwAC0AZgBiADAAZgAyAGUANwA3AGUANQAxAGIAfQADCE4AYQBtAGUABCxUAHcAaQBuAEMAQQBUACAAMwAuADEAIABCAHUAaQBsAGQAIAA0ADAAMgAwAAUWUAByAG8AZgBpAGwAZQBEAGEAdABhAAZMewAxADYAZQA1ADUAYgA2ADAALQA3ADAANAAzAC0ANABhADYAMwAtAGIANgA1AGIALQA2ADEANAA3ADEAMwA4ADcAOABkADQAMgB9AAcSTABpAGIAcgBhAHIAaQBlAHMACEx7ADMAYgBmAGQANQA0ADUAOQAtAGIAMAA3AGYALQA0AGQANgBlAC0AYQBlADEAYQAtAGEAOAAzADMANQA2AGEANQA1ADEANAAyAH0ACUx7ADkAYwA5ADUAOAA5ADYAOAAtADIAYwA4ADUALQA0ADEAYgBiAC0AOAA4ADcAMQAtADgAOQA1AGYAZgAxAGYAZQBkAGUAMQBhAH0ACg5WAGUAcgBzAGkAbwBuAAsGaQBuAHQADApVAHMAYQBnAGUADQpUAGkAdABsAGUADhpWAGkAcwB1AEUAbABlAG0ATQBlAHQAZQByAA8OQwBvAG0AcABhAG4AeQAQDFMAeQBzAHQAZQBtABESVgBpAHMAdQBFAGwAZQBtAHMAEjBWAGkAcwB1AEUAbABlAG0AcwBTAHAAZQBjAGkAYQBsAEMAbwBuAHQAcgBvAGwAcwATKFYAaQBzAHUARQBsAGUAbQBzAFcAaQBuAEMAbwBuAHQAcgBvAGwAcwAUJFYAaQBzAHUARQBsAGUAbQBUAGUAeAB0AEUAZABpAHQAbwByABUiVgBpAHMAdQBOAGEAdABpAHYAZQBDAG8AbgB0AHIAbwBsABYUdgBpAHMAdQBpAG4AcAB1AHQAcwAXDHMAeQBzAHQAZQBtABgYVgBpAHMAdQBFAGwAZQBtAEIAYQBzAGUAGSZEAGUAdgBQAGwAYQBjAGUAaABvAGwAZABlAHIAcwBVAHMAZQBkABoIYgBvAG8AbAAbIlAAbAB1AGcAaQBuAEMAbwBuAHMAdAByAGEAaQBuAHQAcwAcTHsANAAzAGQANQAyAGIAYwBlAC0AOQA0ADIAYwAtADQANABkADcALQA5AGUAOQA0AC0AMQBiAGYAZABmADMAMQAwAGUANgAzAGMAfQAdHEEAdABMAGUAYQBzAHQAVgBlAHIAcwBpAG8AbgAeFFAAbAB1AGcAaQBuAEcAdQBpAGQAHxZTAHkAcwB0AGUAbQAuAEcAdQBpAGQAIEhhAGYAYwBkADUANAA0ADYALQA0ADkAMQA0AC0ANABmAGUANwAtAGIAYgA3ADgALQA5AGIAZgBmAGUAYgA3ADAAZgBkADEANwAhFFUAcABkAGEAdABlAEkAbgBmAG8AIkx7AGIAMAAzADMANgA2AGEAOAAtAGIANQBjADAALQA0AGIAOQBhAC0AYQAwADAAZQAtAGUAYgA4ADYAMAAxADEAMQAwADQAYwAzAH0AIw5VAHAAZABhAHQAZQBzACRMewAxADgANgA4AGYAZgBjADkALQBlADQAZgBjAC0ANAA1ADMAMgAtAGEAYwAwADYALQAxAGUAMwA5AGIAYgA1ADUANwBiADYAOQB9ACVMewBhADUAYgBkADQAOABjADMALQAwAGQAMQA3AC0ANAAxAGIANQAtAGIAMQA2ADQALQA1AGYAYwA2AGEAZAAyAGIAOQA2AGIANwB9ACYWTwBiAGoAZQBjAHQAcwBUAHkAcABlACdUVQBwAGQAYQB0AGUATABhAG4AZwB1AGEAZwBlAE0AbwBkAGUAbABGAG8AcgBDAG8AbgB2AGUAcgB0AGkAYgBsAGUATABpAGIAcgBhAHIAaQBlAHMAKBBMAGkAYgBUAGkAdABsAGUAKRRMAGkAYgBDAG8AbQBwAGEAbgB5ACoeVQBwAGQAYQB0AGUAUAByAG8AdgBpAGQAZQByAHMAKzhTAHkAcwB0AGUAbQAuAEMAbwBsAGwAZQBjAHQAaQBvAG4AcwAuAEgAYQBzAGgAdABhAGIAbABlACwSdgBpAHMAdQBlAGwAZQBtAHMALUg2AGMAYgAxAGMAZABlADEALQBkADUAZABjAC0ANABhADMAYgAtADkAMAA1ADQALQAyADEAZgBhADcANQA2AGEAMwBmAGEANAAuKEkAbgB0AGUAcgBmAGEAYwBlAFYAZQByAHMAaQBvAG4ASQBuAGYAbwAvTHsAYwA2ADEAMQBlADQAMAAwAC0ANwBmAGIAOQAtADQAYwAzADUALQBiADkAYQBjAC0ANABlADMAMQA0AGIANQA5ADkANgA0ADMAfQAwGE0AYQBqAG8AcgBWAGUAcgBzAGkAbwBuADEYTQBpAG4AbwByAFYAZQByAHMAaQBvAG4AMgxMAGUAZwBhAGMAeQAzMEwAYQBuAGcAdQBhAGcAZQBNAG8AZABlAGwAVgBlAHIAcwBpAG8AbgBJAG4AZgBvADQaQwBvAG0AcABhAHQAaQBiAGkAbABpAHQAeQDQAAIaA9ADAS0E0AUGGgbQBwgaAUUHCQjQAAkaBEUKCwQDAAAABQAAAAgAAAAAAAAA0AwLrQIAAADQDQEtDtAPAS0Q0AAJGgRFCgsEAwAAAAUAAAAIAAAAAAAAANAMC60BAAAA0A0BLRHQDwEtENAACRoERQoLBAMAAAAFAAAACAAAAAAAAADQDAutAgAAANANAS0S0A8BLRDQAAkaBEUKCwQDAAAABQAAAAgAAAAAAAAA0AwLrQIAAADQDQEtE9APAS0Q0AAJGgRFCgsEAwAAAAUAAAAIAAAAAAAAANAMC60CAAAA0A0BLRTQDwEtENAACRoERQoLBAMAAAAFAAAACAAAAAAAAADQDAutAgAAANANAS0V0A8BLRDQAAkaBEUKCwQDAAAABQAAAAgAAAAAAAAA0AwLrQIAAADQDQEtFtAPAS0X0AAJGgRFCgsEAwAAAAUAAAAIAAAAAAAAANAMC60EAAAA0A0BLRjQDwEtENAZGq0BRRscAdAAHBoCRR0LBAMAAAAFAAAACAAAAAAAAADQHh8tINAhIhoCRSMkAtAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAAAAANADAS0n0CgBLRHQKQEtENAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAQAAANADAS0n0CgBLRHQKQEtEJoqKwFFAAEC0AABLSzQAAEtF9AAHy0t0C4vGgPQMAutAQAAANAxC60RAAAA0DIarQDQMy8aA9AwC60CAAAA0DELrQMAAADQMhqtANA0Gq0A</v>
+          </d>
+        </o>
+        <v>{F66C7017-BDD8-4114-926C-81D6D687E35F}</v>
+        <o>
+          <v n="Name">"{F66C7017-BDD8-4114-926C-81D6D687E35F}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+      </d>
+      <d n="Values" t="Hashtable" />
+    </o>
+  </Data>
+  <TypeList>
+    <Type n="Hashtable">System.Collections.Hashtable</Type>
+    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+    <Type n="String">System.String</Type>
+  </TypeList>
+</XmlArchive>
+    </PlcProjectOptions>
+  </ProjectExtensions>
+  <!-- 
+   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+-->
+</Project>

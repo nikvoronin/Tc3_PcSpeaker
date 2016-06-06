@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4020.0">
+	<Project ProjectGUID="{37722D36-B800-47BB-B6E4-ED6172C26202}" ShowHideConfigurations="#x6">
+		<Plc>
+			<Project GUID="{15443D8D-DD80-4D5D-BD73-876D4F2E9838}" Name="Tc3_PcSpeaker" PrjFilePath="Tc3_PcSpeaker.plcproj" TmcFilePath="Tc3_PcSpeaker.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
+				<Instance Id="#x01010010" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>Tc3_PcSpeaker Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
+</TcSmProject>

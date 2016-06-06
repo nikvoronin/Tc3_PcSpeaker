@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4019.2">
+  <POU Name="MAIN" Id="{a3e762db-d7f9-4144-9a48-86151ea3aa91}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	START AT %I*	: BOOL;
+	STOP AT %I*		: BOOL;
+
+	Speaker	: FB_PcSpeaker;
+
+	RTrig	: R_TRIG;
+	state	: UINT;
+	ni		: UINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE state OF
+0:
+	RTrig(CLK := START);
+	IF 	RTrig.Q THEN
+		START := FALSE;
+		RTrig(CLK := FALSE);
+		ni := 0;
+		Speaker( Execute := FALSE );
+		state := 100;
+	END_IF
+
+100: // Beep
+	Speaker(
+		Freq	:= REAL_TO_DWORD(StarWars.notes[ni + 0]),
+		Length	:= REAL_TO_TIME( StarWars.notes[ni + 1]),
+		Delay	:= REAL_TO_TIME( StarWars.notes[ni + 2]),
+		Execute := TRUE );
+
+	IF NOT Speaker.Busy THEN
+		Speaker(Execute:= FALSE);
+		ni := ni + 3;
+		IF ni > StarWars.NOTES_MAX - 1 THEN
+			state := 0;
+		END_IF
+	END_IF
+
+	RTrig(CLK := STOP);
+	IF 	RTrig.Q THEN
+		Speaker(Execute:= FALSE);
+		Speaker.SwitchOff();
+		STOP := FALSE;
+		state := 0;
+	END_IF
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
