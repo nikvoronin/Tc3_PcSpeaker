@@ -10,7 +10,11 @@ VAR
 
 	RTrig	: R_TRIG;
 	state	: UINT;
-	ni		: UINT;
+	
+	pNotes	: PVOID;
+	F, L, D	: REAL;
+	M		: REAL := 1; // duration multiplier
+	szR		: UDINT := SIZEOF(REAL);
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -18,24 +22,26 @@ END_VAR
 0:
 	RTrig(CLK := START);
 	IF 	RTrig.Q THEN
+		pNotes := ADR(StarWars.Beeps);	// <<<<<<<<<< Can change melody here
+	
 		START := FALSE;
 		RTrig(CLK := FALSE);
-		ni := 0;
 		Speaker( Execute := FALSE );
+		A_CopyNext();
 		state := 100;
 	END_IF
 
 100: // Beep
 	Speaker(
-		Freq	:= REAL_TO_DWORD(StarWars.notes[ni + 0]),
-		Length	:= REAL_TO_TIME( StarWars.notes[ni + 1]),
-		Delay	:= REAL_TO_TIME( StarWars.notes[ni + 2]),
+		Freq	:= REAL_TO_DWORD(F ),
+		Length	:= REAL_TO_TIME( L * M ),
+		Delay	:= REAL_TO_TIME( D ),
 		Execute := TRUE );
 
 	IF NOT Speaker.Busy THEN
 		Speaker(Execute:= FALSE);
-		ni := ni + 3;
-		IF ni > StarWars.NOTES_MAX - 1 THEN
+		A_CopyNext();
+		IF (F = L) AND (L = D) AND (D = 0) THEN
 			state := 0;
 		END_IF
 	END_IF
@@ -49,5 +55,16 @@ END_VAR
 	END_IF
 END_CASE]]></ST>
     </Implementation>
+    <Action Name="A_CopyNext" Id="{2c247935-704a-47db-bf3b-52f3c0800ccf}">
+      <Implementation>
+        <ST><![CDATA[MEMCPY(ADR(F), pNotes, szR);
+pNotes := pNotes + szR;
+MEMCPY(ADR(L), pNotes, szR);
+pNotes := pNotes + szR;
+MEMCPY(ADR(D), pNotes, szR);
+pNotes := pNotes + szR;
+]]></ST>
+      </Implementation>
+    </Action>
   </POU>
 </TcPlcObject>
