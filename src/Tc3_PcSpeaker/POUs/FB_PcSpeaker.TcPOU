@@ -4,7 +4,7 @@
     <Declaration><![CDATA[// PC Speaker TwinCAT 3 Library for x86 based PLCs. 
 // Project based on Beckhoff's IOPortWrite Example
 // https://infosys.beckhoff.com/content/1033/tcplclibsystem/html/tcplclibsys_f_ioportwrite.htm
-// and "PC INTERN 2.0" book by Data Becker, ISBN 3-89011-331-1.
+// and "PC INTERN 2.0" book, Data Becker, ISBN 3-89011-331-1.
 //
 FUNCTION_BLOCK FB_PcSpeaker
 VAR_INPUT

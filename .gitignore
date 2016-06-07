@@ -1,7 +1,10 @@
 ﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+# This .gitignore file was manually created by Nikolai Voronin.
+##
 
+/util/*.csv
+/util/*.TcGVL
+/util/*.mid
 /src/Tc3_PcSpeaker/_*
 /src/PcSpeaker_Player/_*
 *.tmc
